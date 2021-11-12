@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARTIST</title>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css" media="screen" />
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="/">Home</a>
+        <a href="/artists">Artists</a>
+        <a href="/random">Random</a>
+        <a href="/authors">Authors</a>
+    </div>
+    <div class="main">
+        <h1>{{ .Name }}</h1>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ .Image}}">
+                    </div>
+                    <div class="container">
+                        <p class="creation">Created in {{.CreationDate}}</p>
+                        <p class="mambers">Members of group: <br>
+                            {{range .Members }} ♪ {{.}} {{end}} </p>
+                        <p class="FirstAlbum">First Album in {{.FirstAlbum}}</p>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="container">
+                        <br>
+                        <p class="locdat">Past concerts: </p>
+                        {{ range $k, $v := .DatesLocations }}
+                        {{$k }} :
+                        <br> {{ range $v }} {{.}} <br> {{end}} <br>
+                        {{ end }}
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

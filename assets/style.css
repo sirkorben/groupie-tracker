@@ -1,0 +1,182 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 100%;
+    background-image: url("https://cdn.wallpapersafari.com/68/45/VBdP7v.jpeg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* background-size: cover; */
+  }
+  
+  img {
+    /* max-width: 100%; */
+    width: 100%;
+    height: auto;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:5px;
+  }
+  
+  img:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+  
+  p.groupname {
+    font-weight: lighter;
+  }
+  
+  p.title {
+    color: grey;
+    font-weight: lighter;
+    font-size: 60%;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .main {
+    margin-left: 160px; 
+    font-size: 28px; 
+    padding: 0px 10px;
+  }
+  
+  /* Starting part for artist.html */
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  /* .row {
+    text-align:center;
+    margin:0 auto;
+  } */
+  .column {
+    float: left;
+    width: 20%;
+    min-width:350px;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    background-color: rgba(245, 245, 245, 0);
+    opacity: .97;
+  }
+  
+   /* @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }  */
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius:5px;
+    background: #ebeeeb;
+  }
+  
+  .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .card-image{
+      margin-top: 10px;
+  }
+  
+  .container {
+    padding: 0 16px;
+    text-align: center;
+    font-size: 70%;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .button {
+    font-family: Copperplate, Papyrus, fantasy;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  } 
+  
+  
+    /* card flip */
+    /* .card__face--front {
+      text-align: center;
+      background: whitesmoke;
+    }
+    
+    .card__face--front p {
+      margin-top: 45px;
+    }
+    .is-flipped {
+      transform: rotateY(180deg);
+    }
+    .card__face--back {
+      background: whitesmoke;
+      padding-left: 10px;
+      transform: rotateY(180deg);
+    } */
+  /* till here */
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    .column {
+      width: 100%;
+      display: flex;
+    }
+  }
+  
+  @keyframes shake {
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      10% { transform: translate(-1px, -2px) rotate(-1deg); }
+      20% { transform: translate(-3px, 0px) rotate(1deg); }
+      30% { transform: translate(3px, 2px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(-1px, 2px) rotate(-1deg); }
+      60% { transform: translate(-3px, 1px) rotate(0deg); }
+      70% { transform: translate(3px, 1px) rotate(-1deg); }
+      80% { transform: translate(-1px, -1px) rotate(1deg); }
+      90% { transform: translate(1px, 2px) rotate(0deg); }
+      100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }

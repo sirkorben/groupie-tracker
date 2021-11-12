@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARTISTS</title>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css" media="screen" />
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="/">Home</a>
+        <a href="/artists">Artists</a>
+        <a href="/random">Random</a>
+        <a href="/authors">Authors</a>
+    </div>
+    <div class="main">
+        <h1>Groups Fan Page</h1>
+        <div class="row">
+            {{ range . }}
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ .Image}}">
+                    </div>
+                    <div class="container">
+                        <p class="groupname">{{ .Name }}</h2>
+                        <p class="title">description inside</p>
+                        <p><a href="/artists/?id={{.Id}}" class="button" value="sap" id="artistButton">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</body>
+
+</html>
