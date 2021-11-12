@@ -37,10 +37,19 @@ func artistsPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func oneArtistPage(w http.ResponseWriter, r *http.Request) {
-	a, _ := strconv.Atoi(r.URL.Query().Get("id"))
+	a, err1 := strconv.Atoi(r.URL.Query().Get("id"))
+	if err1 != nil {
+		errorHandler(w, r, http.StatusBadRequest)
+		return
+	}
+
+	if a > len(data) {
+		errorHandler(w, r, http.StatusBadRequest)
+		return
+	}
+
 	err := tpl.ExecuteTemplate(w, "artist_profile.html", data[a-1])
 	if err != nil {
-		// log.Println(err)
 		errorHandler(w, r, http.StatusInternalServerError)
 		return
 	}
